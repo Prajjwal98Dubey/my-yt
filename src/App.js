@@ -6,6 +6,7 @@ import WatchPage from './components/WatchPage';
 import ErrorPage from './components/ErrorPage';
 import Shorts from './components/Shorts';
 import Music from './components/Music';
+import Live from './components/Live';
 
 function App() {
   return (
@@ -35,6 +36,10 @@ const appRouter=createBrowserRouter([
   {
     path:'/music',
     element:<Music/>
+  },
+  {
+    path:'/live',
+    element:<Live/>
   }
 ])
 
