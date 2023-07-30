@@ -6,13 +6,13 @@ const SideVideo = () => {
     const[isLoading,setIsLoading]=useState(true)
 
       useEffect(()=>{
-        const getVideos=async()=>{
-            const data=await fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=AIzaSyCujbtKR9pDeFdtiieHwq2m4h51K5HfP0E")
-            const json=await data.json()
-            setVideos(json.items)
-            setIsLoading(false)
-        }
-        getVideos()
+        // const getVideos=async()=>{
+        //     const data=await fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=AIzaSyAHVcm9RAzCB1m4yxv1pJQiNR-n2TkNEl0")
+        //     const json=await data.json()
+        //     setVideos(json.items)
+        //     setIsLoading(false)
+        // }
+        // getVideos()
       },[])
      
   return (

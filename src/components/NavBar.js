@@ -8,20 +8,20 @@ const NavBar = () => {
 
    useEffect(()=>{
           const getSugesstions=async()=>{
-            const data=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${text}&key=AIzaSyDeYQRoPC0rO4dksnCoElgadjLB3UJiA88`)       
+            const data=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${text}&key=AIzaSyBSSoSh0gdKNhlH6UlemOEm8ur5tsMF2Jg`)       
             const json=await data.json()
             setSuggest(json.items)
             setIsLoading(false)
           }
           setTimeout(()=>{
-            //  const timer = getSugesstions()
-            //  return ()=>clearTimeout(timer)
-          },1000)
+             const timer = getSugesstions()
+             return ()=>clearTimeout(timer)
+          },5000)
          
    },[text])
-  //  if(isLoading){
-  //   return <div>Loading...</div>
-  //  }
+   if(isLoading){
+    return <div>Loading...</div>
+   }
 
   return (
     <div className=' z-10 bg-[#25272c] sticky top-0 overflow-hidden w-[100%]'>
@@ -32,11 +32,11 @@ const NavBar = () => {
          <div className='flex'>
           <div>
             <input type="text" className='ml-3 bg-[#202124] p-2 text-white border border-[#67696f] w-[550px] mt-2 h-[40px] rounded-2xl' value={text} onChange={(e)=>setText(e.target.value)} placeholder='Search' />
-           {text ? <div className=' ml-3 mt-1 rounded-lg w-[550px] text-white bg-[#202124] fixed'>
+           {text ? <Link to={"/search-results?v="+text}><div className=' ml-3 mt-1 rounded-lg w-[550px] text-white bg-[#202124] fixed'>
               <ul>
                 {suggest.slice(0,17).map((s)=><li className='h-[40px] text-lg font-semibold text-white p-3 hover:bg-[#3b3e47] cursor-pointer' key={s.etag}>{s.snippet.channelTitle}</li>)}
               </ul>
-            </div>:null} 
+            </div></Link>:null} 
             
             </div>
             <div className='mt-3 ml-1 cursor-pointer'>
@@ -45,6 +45,7 @@ const NavBar = () => {
          </div>
          <div>
             <img src="avatar.png" className='w-[60px] rounded-sm' alt="user" />
+            {console.log(suggest)}
          </div>
     </div>
     </div>
