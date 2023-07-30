@@ -1,25 +1,41 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Home from './components/Home';
+import WatchPage from './components/WatchPage';
+import ErrorPage from './components/ErrorPage';
+import Shorts from './components/Shorts';
+import Music from './components/Music';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+     <RouterProvider router={appRouter}/>
+   </>
   );
 }
+
+const appRouter=createBrowserRouter([
+  {
+     path:'/',
+     element:<Home/>
+  },
+  {
+    path:'/watch',
+    element:<WatchPage/>
+  },
+  {
+    path:'*',
+    element:<ErrorPage/>
+  },
+  {
+    path:'/shorts',
+    element:<Shorts/>
+  },
+  {
+    path:'/music',
+    element:<Music/>
+  }
+])
 
 export default App;
