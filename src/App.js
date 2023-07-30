@@ -8,6 +8,7 @@ import Shorts from './components/Shorts';
 import Music from './components/Music';
 import Live from './components/Live';
 import SearchResults from './components/SearchResults';
+import SearchWatchPage from './components/SearchWatchPage';
 
 function App() {
   return (
@@ -45,6 +46,10 @@ const appRouter=createBrowserRouter([
   {
     path:'/search-results',
     element:<SearchResults/>
+  },
+  {
+    path:'/searchwatch',
+    element:<SearchWatchPage/>
   }
 ])
 
