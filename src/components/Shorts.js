@@ -14,7 +14,7 @@ const Shorts = () => {
             const options = {
                 method: 'GET',
                 headers: {
-                    'X-RapidAPI-Key': 'f3cf1ed102msh62d85265071397ap1d76c3jsn12c38859b41b',
+                    'X-RapidAPI-Key': [YOUR_API_KEY],
                     'X-RapidAPI-Host': 'tiktok-video-no-watermark2.p.rapidapi.com'
                 }
             };
