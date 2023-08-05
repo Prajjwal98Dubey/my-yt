@@ -8,7 +8,7 @@ const NavBar = () => {
 
    useEffect(()=>{
           const getSugesstions=async()=>{
-            const data=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${text}&key=AIzaSyBx3O0o7OWUS816Jov7sS5JAXeX-1x0HhQ`)       
+            const data=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${text}&key=[YOUR_API_KEY]`)       
             const json=await data.json()
             setSuggest(json.items)
             setIsLoading(false)
@@ -19,9 +19,9 @@ const NavBar = () => {
           },5000)
          
    },[text])
-  //  if(isLoading){
-  //   return <div>Loading...</div>
-  //  }
+   if(isLoading){
+    return <div>Loading...</div>
+   }
 
   return (
     <div className=' z-10 bg-[#25272c] sticky top-0 overflow-hidden w-[100%]'>
