@@ -29,7 +29,7 @@ const Shorts = () => {
             }
         }
 
-        // getItems()
+        getItems()
     }, [])
     if(isLoading){
         return <ShortsShimmer/>     
