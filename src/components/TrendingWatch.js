@@ -48,7 +48,7 @@ const TrendingWatch = () => {
    <div>
     {data[0].description}
    </div>
-    {/* <div className='w-[700px]'>
+     <div className='w-[700px]'>
         <div>
           <iframe width="700" height="360" src={"https://www.youtube.com/embed/" + param} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
         </div>
@@ -81,7 +81,7 @@ const TrendingWatch = () => {
             </button>
           </div>
         </div>
-      </div> */}
+      </div> 
         
    </>
   )
