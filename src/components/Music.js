@@ -1,23 +1,25 @@
 // Trending Page
-
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import TrendingPage from './TrendingPage'
 import NavBar from './NavBar'
 import SideBar from './SideBar'
-
-
+import { useDispatch, useSelector } from 'react-redux'
+import { addToItems } from '../utils/dataSlice'
+import { YT_TRENDING_API } from './constant'
 const Music = () => {
   const [videos, setVideos] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const[selected,setSelected]=useState('default')
+  // const items=useSelector((store)=>store.data.items)
+  const dispatch=useDispatch()
   useEffect(() => {
     const getVideos = async () => {
       const url = `https://youtube-trending.p.rapidapi.com/trending?country=IN&type=${selected}`;
       const options = {
         method: 'GET',
         headers: {
-          'X-RapidAPI-Key': 'f13af8c2ecmsh759114cbe180688p1752f1jsn0478d489624a',
+          'X-RapidAPI-Key':`${YT_TRENDING_API}`,
           'X-RapidAPI-Host': 'youtube-trending.p.rapidapi.com'
         }
       };
@@ -32,9 +34,11 @@ const Music = () => {
         console.error(error);
       }
     }
-
-    // getVideos()
-  },[selected])
+    getVideos()
+      
+      dispatch(addToItems(videos))
+  
+  },[selected,dispatch,videos])
   return (
     <> 
     <NavBar/>

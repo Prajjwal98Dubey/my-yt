@@ -10,7 +10,6 @@ const TrendingPage = ({vid}) => {
             return desc.substring(0,135) + "..."
         }
     }
-
     const conversionCount = (s) => {
         if (s.length >= 4 && s.length < 5) {
           return s.substring(0, 1) + "." + s.substring(1, 2) + "k"

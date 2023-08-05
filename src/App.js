@@ -9,6 +9,7 @@ import Music from './components/Music';
 import Live from './components/Live';
 import SearchResults from './components/SearchResults';
 import SearchWatchPage from './components/SearchWatchPage';
+import TrendingWatch from './components/TrendingWatch';
 
 function App() {
   return (
@@ -50,6 +51,10 @@ const appRouter=createBrowserRouter([
   {
     path:'/searchwatch',
     element:<SearchWatchPage/>
+  },
+  {
+    path:'/trendingwatch',
+    element:<TrendingWatch/>
   }
 ])
 

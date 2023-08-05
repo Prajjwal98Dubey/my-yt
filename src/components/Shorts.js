@@ -14,7 +14,7 @@ const Shorts = () => {
             const options = {
                 method: 'GET',
                 headers: {
-                    'X-RapidAPI-Key': [YOUR_API_KEY],
+                    'X-RapidAPI-Key': [],
                     'X-RapidAPI-Host': 'tiktok-video-no-watermark2.p.rapidapi.com'
                 }
             };
@@ -29,17 +29,13 @@ const Shorts = () => {
             }
         }
 
-        getItems()
-
+        // getItems()
     }, [])
-
     if(isLoading){
-        return <ShortsShimmer/>
-        
+        return <ShortsShimmer/>     
     }
     return (
-        <> 
-                    
+        <>                  
                   <NavBar/>
                   <div className='fixed'>
                     <SideBar/>
@@ -50,5 +46,4 @@ const Shorts = () => {
         </>
     )
 }
-
 export default Shorts
