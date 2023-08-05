@@ -12,7 +12,7 @@ const SearchResults = () => {
         useEffect(()=>{
                
             const getVideos=async()=>{
-                const data=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${element}&key=AIzaSyBx3O0o7OWUS816Jov7sS5JAXeX-1x0HhQ`)
+                const data=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${element}&key=[YOUR_API_KEY]`)
                 const json=await data.json()
                 setVideos(json.items)
                 setIsLoading(false)

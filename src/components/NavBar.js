@@ -7,16 +7,16 @@ const NavBar = () => {
   const[isLoading,setIsLoading]=useState(true)
 
    useEffect(()=>{
-          // const getSugesstions=async()=>{
-          //   const data=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${text}&key=AIzaSyBx3O0o7OWUS816Jov7sS5JAXeX-1x0HhQ`)       
-          //   const json=await data.json()
-          //   setSuggest(json.items)
-          //   setIsLoading(false)
-          // }
-          // setTimeout(()=>{
-          //    const timer = getSugesstions()
-          //    return ()=>clearTimeout(timer)
-          // },5000)
+          const getSugesstions=async()=>{
+            const data=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${text}&key=AIzaSyBx3O0o7OWUS816Jov7sS5JAXeX-1x0HhQ`)       
+            const json=await data.json()
+            setSuggest(json.items)
+            setIsLoading(false)
+          }
+          setTimeout(()=>{
+             const timer = getSugesstions()
+             return ()=>clearTimeout(timer)
+          },5000)
          
    },[text])
   //  if(isLoading){
