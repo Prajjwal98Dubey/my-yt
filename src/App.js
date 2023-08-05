@@ -36,7 +36,7 @@ const appRouter=createBrowserRouter([
     element:<Shorts/>
   },
   {
-    path:'/music',
+    path:'/trending',
     element:<Music/>
   },
   {

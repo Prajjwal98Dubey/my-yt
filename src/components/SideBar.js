@@ -15,11 +15,11 @@ const SideBar = () => {
                 </div></Link>
                 <Link to='/live'><div className='flex flex-col justify-center items-center pt-4 pb-6 cursor-pointer hover:bg-[#3c3f49] rounded-2xl '>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-radio"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9" /><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5" /><circle cx="12" cy="12" r="2" /><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5" /><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19" /></svg>
-                    <div className='ml-2'>Live</div>
+                    <div className='ml-1'>Live</div>
                 </div></Link>
-                <Link to='/music'><div className='flex flex-col justify-center items-center pt-4 pb-6 cursor-pointer hover:bg-[#3c3f49] rounded-2xl '>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#eee7e7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-music"><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /></svg>
-                    <div className='ml-1'>Music</div>
+                <Link to='/trending'><div className='flex flex-col justify-center items-center pt-4 pb-6 cursor-pointer hover:bg-[#3c3f49] rounded-2xl '>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-trending-up"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                    <div className='ml-1'>Trending</div>
                 </div></Link>
             </div>
         </div>
